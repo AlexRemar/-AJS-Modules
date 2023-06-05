@@ -1,5 +1,5 @@
 class Character {
-  constructor(name, type, attack, defence, health) {
+  constructor(name, type) {
     if (name.length < 2 || name.length > 10) {
       throw new Error('Ошибка. Допускаются только имена длиной от 2 символов и не более 10');
     }
@@ -9,10 +9,10 @@ class Character {
     }
     this.name = name;
     this.type = type;
-    this.attack = attack;
-    this.defence = defence;
-    this.health = health;
+    this.health = 100;
     this.level = 1;
+    this.attack = 100;
+    this.defence = 40;
   }
 
   levelUp() {
