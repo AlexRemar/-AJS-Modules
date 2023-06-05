@@ -3,10 +3,7 @@ class Character {
     if (name.length < 2 || name.length > 10) {
       throw new Error('Ошибка. Допускаются только имена длиной от 2 символов и не более 10');
     }
-    if (type !== 'Bowman' && type !== 'Swordsman' && type !== 'Magician' && type !== 'Daemon' && type !== 'Undead'
-        && type !== 'Zombie') {
-      throw new Error('Ошибка. Недопустимый тип персонажа');
-    }
+    
     this.name = name;
     this.type = type;
     this.health = 100;
@@ -26,9 +23,10 @@ class Character {
   }
 
   damage(points) {
-    if (this.health >= 0) {
-      this.health -= points * (1 - this.defence / 100);
+    if (this.health < 0) {
+      throw new Error('Ваш персонаж мёртв. Игра окончена');
     }
+      this.health -= points * (1 - this.defence / 100);
   }
 }
 
