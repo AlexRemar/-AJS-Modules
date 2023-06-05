@@ -3,7 +3,7 @@ class Character {
     if (name.length < 2 || name.length > 10) {
       throw new Error('Ошибка. Допускаются только имена длиной от 2 символов и не более 10');
     }
-    
+
     this.name = name;
     this.type = type;
     this.health = 100;
@@ -26,7 +26,7 @@ class Character {
     if (this.health < 0) {
       throw new Error('Ваш персонаж мёртв. Игра окончена');
     }
-      this.health -= points * (1 - this.defence / 100);
+    this.health -= points * (1 - this.defence / 100);
   }
 }
 

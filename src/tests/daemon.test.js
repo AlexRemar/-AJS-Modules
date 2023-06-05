@@ -21,4 +21,3 @@ test('Не верное имя', () => {
 test('Не верный тип демон', () => {
   expect(() => new Daemon('Berny', 'Thief')).toThrow();
 });
-
