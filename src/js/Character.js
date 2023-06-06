@@ -8,8 +8,6 @@ class Character {
     this.type = type;
     this.health = 100;
     this.level = 1;
-    this.attack = 100;
-    this.defence = 40;
   }
 
   levelUp() {
@@ -23,10 +21,8 @@ class Character {
   }
 
   damage(points) {
-    if (this.health < 0) {
-      throw new Error('Ваш персонаж мёртв. Игра окончена');
-    }
     this.health -= points * (1 - this.defence / 100);
+    this.health = (this.health > 0) ? this.health : 0;
   }
 }
 
